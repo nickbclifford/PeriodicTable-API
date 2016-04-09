@@ -127,7 +127,7 @@ $shortGases = ['Rn', 'Xe', 'Kr', 'Ar', 'Ne', 'He'];
 foreach($shortGases as $key) {
 	foreach ($electrons as $key2 => $value) {
 		if(strpos($electrons[$key2]["config"], $electrons[$key]["config"]) !== false) {
-			$toBeShortened = $electrons[$key2]["config"]
+			$toBeShortened = $electrons[$key2]["config"];
 			str_replace($electrons[$key]["config"], "[" . $key . "]" , $toBeShortened);
 			$electrons[$key2]["short"] = $toBeShortened;
 		}
