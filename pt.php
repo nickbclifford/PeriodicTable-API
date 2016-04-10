@@ -38,6 +38,7 @@ if(isset($_GET["mode"])) {
 			echo json_encode($result);
 			break;
 		case "orbitals":
+		case "electrons":
 			if(isset($_GET["elements"])) {
 				$errorElements = [];
 				// gets the element symbols from the URL
