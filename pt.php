@@ -13,7 +13,7 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					if(in_array($symbol, array_keys($names))) {
+					if(in_array(ucfirst(strtolower($symbol)), array_keys($names))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
 						unset($elements[$index]);
@@ -46,7 +46,7 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					if(in_array($symbol, array_keys($electrons))) {
+					if(in_array(ucfirst(strtolower($symbol)), array_keys($electrons))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
 						unset($elements[$index]);
@@ -88,7 +88,7 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					if(in_array($symbol, array_keys($electrons))) {
+					if(in_array(ucfirst(strtolower($symbol)), array_keys($electrons))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
 						unset($elements[$index]);
