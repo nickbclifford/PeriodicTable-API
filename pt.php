@@ -15,6 +15,7 @@ if(isset($_GET["mode"])) {
 					if(in_array($symbol, array_keys($names))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
+						unset($elements[$index]);
 						$errMessage = "You have an invalid element symbol in your input. Please try again.";
 					}
 				}
@@ -30,7 +31,7 @@ if(isset($_GET["mode"])) {
 			}
 			// injects the error message in the top level if there is one
 			if(isset($errMessage)) {
-				$result = ["error" => $errMessage, $result];
+				$result = ["error" => $errMessage, "result" => $result];
 			}
 			// echos the array as JSON
 			echo json_encode($result);
@@ -43,6 +44,7 @@ if(isset($_GET["mode"])) {
 					if(in_array($symbol, array_keys($electrons))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
+						unset($elements[$index]);
 						$errMessage = "You have an invalid element symbol in your input. Please try again.";
 					}
 				}
@@ -68,7 +70,7 @@ if(isset($_GET["mode"])) {
 			}
 			// injects the error message in the top level if there is one
 			if(isset($errMessage)) {
-				$result = ["error" => $errMessage, $result];
+				$result = ["error" => $errMessage, "result" => $result];
 			}
 			// echos the array as JSON
 			echo json_encode($result);
@@ -81,6 +83,7 @@ if(isset($_GET["mode"])) {
 					if(in_array($symbol, array_keys($electrons))) {
 						$elements[$index] = ucfirst(strtolower($symbol));
 					} else {
+						unset($elements[$index]);
 						$errMessage = "You have an invalid element symbol in your input. Please try again.";
 					}
 				}
@@ -100,7 +103,7 @@ if(isset($_GET["mode"])) {
 			}
 			// injects the error message in the top level if there is one
 			if(isset($errMessage)) {
-				$result = ["error" => $errMessage, $result];
+				$result = ["error" => $errMessage, "result" => $result];
 			}
 			// echos the array as JSON
 			echo json_encode($result);
