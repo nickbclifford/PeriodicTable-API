@@ -127,5 +127,8 @@ if(isset($_GET["spelling"])) {
 		$names['Al'] = 'Aluminium';
 		$names['S'] = 'Sulphur';
 		$names['Cs'] = 'Caesium';
-	}
+	} else if ($_GET["spelling"] === "sci") {
+		$names['Al'] = 'Aluminium';
+		$names['Cs'] = 'Caesium';
+ 	}
 }
