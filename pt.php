@@ -12,7 +12,11 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					$elements[$index] = ucfirst(strtolower($symbol));
+					if(in_array($symbol, array_keys($names))) {
+						$elements[$index] = ucfirst(strtolower($symbol));
+					} else {
+						$errMessage = "You have an invalid element symbol in your input. Please try again.";
+					}
 				}
 			} else {
 				// if none were specified, just do all of them
@@ -24,6 +28,10 @@ if(isset($_GET["mode"])) {
 				$name = $names[$element];
 				$result[$element] = $name;
 			}
+			// injects the error message in the top level if there is one
+			if(isset($errMessage)) {
+				$result = ["error" => $errMessage, $result];
+			}
 			// echos the array as JSON
 			echo json_encode($result);
 			break;
@@ -32,7 +40,11 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					$elements[$index] = ucfirst(strtolower($symbol));
+					if(in_array($symbol, array_keys($electrons))) {
+						$elements[$index] = ucfirst(strtolower($symbol));
+					} else {
+						$errMessage = "You have an invalid element symbol in your input. Please try again.";
+					}
 				}
 			} else {
 				// if none were specified, just do all of them
@@ -54,6 +66,10 @@ if(isset($_GET["mode"])) {
 					}
 				}
 			}
+			// injects the error message in the top level if there is one
+			if(isset($errMessage)) {
+				$result = ["error" => $errMessage, $result];
+			}
 			// echos the array as JSON
 			echo json_encode($result);
 			break;
@@ -62,14 +78,18 @@ if(isset($_GET["mode"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
 				foreach ($elements as $index => $symbol) {
-					$elements[$index] = ucfirst(strtolower($symbol));
+					if(in_array($symbol, array_keys($electrons))) {
+						$elements[$index] = ucfirst(strtolower($symbol));
+					} else {
+						$errMessage = "You have an invalid element symbol in your input. Please try again.";
+					}
 				}
 			} else {
 				// if none were specified, just do all of them
 				$elements = array_keys($numbers);
 			}
 			$result = [];
-			// gets atomic numbers and possibly masses from $numbers, passes them to $results
+			// gets atomic numbers and possibly masses from $numbers, passes them to $resultsp
 			foreach ($elements as $element) {
 				$result[$element]["atomic"] = $numbers[$element]["atomic"];
 				if(isset($_GET["mass"])) {
@@ -78,8 +98,15 @@ if(isset($_GET["mode"])) {
 					}
 				}
 			}
+			// injects the error message in the top level if there is one
+			if(isset($errMessage)) {
+				$result = ["error" => $errMessage, $result];
+			}
 			// echos the array as JSON
 			echo json_encode($result);
+			break;
+		case "dankmemes":
+			echo json_encode([69 => "( ͡° ͜ʖ ͡°)"]);
 			break;
 		default:
 			// invalid mode? echo an error.
