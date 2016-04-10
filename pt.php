@@ -57,6 +57,30 @@ if(isset($_GET["mode"])) {
 			// echos the array as JSON
 			echo json_encode($result);
 			break;
+		case "numbers":
+			if(isset($_GET["elements"])) {
+				// gets the element symbols from the URL
+				$elements = explode(',', $_GET["elements"]);
+				foreach ($elements as $index => $symbol) {
+					$elements[$index] = ucfirst(strtolower($symbol));
+				}
+			} else {
+				// if none were specified, just do all of them
+				$elements = array_keys($numbers);
+			}
+			$result = [];
+			// gets atomic numbers and possibly masses from $numbers, passes them to $results
+			foreach ($elements as $element) {
+				$result[$element]["atomic"] = $numbers[$element]["atomic"];
+				if(isset($_GET["mass"])) {
+					if($_GET["mass"]) {
+						$result[$element]["mass"] = $numbers[$element]["mass"];
+					}
+				}
+			}
+			// echos the array as JSON
+			echo json_encode($result);
+			break;
 		default:
 			// invalid mode? echo an error.
 			echo json_encode(["error" => "Invalid mode. Please try again!"]);
