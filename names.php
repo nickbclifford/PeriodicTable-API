@@ -121,10 +121,11 @@ $names = [
 	'Uuo' => 'Ununoctium'
 ];
 // congrats if you've made it this far. welcome to hell.
-
-if ($_GET["spelling"] === "uk") {
-	// we are a kind and accepting community here at nickclifford.me
-	$names['Al'] = 'Aluminium';
-	$names['S'] = 'Sulphur';
-	$names['Cs'] = 'Caesium';
+if(isset($_GET["spelling"])) {
+	if ($_GET["spelling"] === "uk") {
+		// we are a kind and accepting community here at nickclifford.me
+		$names['Al'] = 'Aluminium';
+		$names['S'] = 'Sulphur';
+		$names['Cs'] = 'Caesium';
+	}
 }
