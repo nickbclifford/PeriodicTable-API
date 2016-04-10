@@ -48,8 +48,10 @@ if(isset($_GET["mode"])) {
 			foreach ($elements as $index => $element) {
 				$result[$element]["config"] = electron_config($atomicNumbers[$index]);
 				$result[$element]["short"] = electron_config($atomicNumbers[$index], true);
-				if($_GET["showBlocks"]) {
-					$result[$element]["block"] = $electrons[$element]["block"];
+				if(isset($_GET["showBlocks"])) {
+					if($_GET["showBlocks"]) {
+						$result[$element]["block"] = $electrons[$element]["block"];
+					}
 				}
 			}
 			// echos the array as JSON
