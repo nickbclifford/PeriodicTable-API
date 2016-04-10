@@ -1,11 +1,13 @@
 <?php
 // api goes here
 // example url: https://nickclifford.me/api/pt.php?mode=names&elements=H,Ar,Hf
+require('names.php');
+require('numbers.php');
+require('electrons.php');
+
 if(isset($_GET["mode"])) {
 	switch($_GET["mode"]) {
 		case "names":
-			// imports the $names array
-			require('names.php');
 			if(isset($_GET["elements"])) {
 				// gets the element symbols from the URL
 				$elements = explode(',', $_GET["elements"]);
@@ -26,12 +28,39 @@ if(isset($_GET["mode"])) {
 			echo json_encode($result);
 			break;
 		case "orbitals":
+			if(isset($_GET["elements"])) {
+				// gets the element symbols from the URL
+				$elements = explode(',', $_GET["elements"]);
+				foreach ($elements as $index => $symbol) {
+					$elements[$index] = ucfirst(strtolower($symbol));
+				}
+			} else {
+				// if none were specified, just do all of them
+				$elements = array_keys($electrons);
+			}
+			$result = [];
+			$atomicNumbers = [];
+			// converts the symbols to atomic numbers (i could probably just use array_push() here, but i don't really care)
+			foreach ($elements as $index => $symbol) {
+				$atomicNumbers[$index] = $numbers[$symbol]["atomic"];
+			}
+			// calculates configurations & gets element blocks if requested
+			foreach ($elements as $index => $element) {
+				$result[$element]["config"] = electron_config($atomicNumbers[$index]);
+				$result[$element]["short"] = electron_config($atomicNumbers[$index], true);
+				if($_GET["showBlocks"]) {
+					$result[$element]["block"] = $electrons[$element]["block"];
+				}
+			}
+			// echos the array as JSON
+			echo json_encode($result);
 			break;
 		default:
-			// no modes? echo an error.
-			echo json_encode(["error" => "No mode specified. Please try again!"]);
+			// invalid mode? echo an error.
+			echo json_encode(["error" => "Invalid mode. Please try again!"]);
 			break;
 	}
 } else {
-	// some other stuff
+	// no modes? echo an error.
+	echo json_encode(["error" => "No mode specified. Please try again!"]);
 }
