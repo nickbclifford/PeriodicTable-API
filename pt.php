@@ -31,8 +31,10 @@ if(isset($_GET["mode"])) {
 				$result[$element] = $name;
 			}
 			// pops an error message in the $result
-			foreach ($errorElements as $error) {
-				$result[$error] = ["error" => "Invalid element!"];
+			if(isset($errorElements)) {
+				foreach ($errorElements as $error) {
+					$result[$error] = ["error" => "Invalid element!"];
+				}
 			}
 			// echos the array as JSON
 			echo json_encode($result);
@@ -72,8 +74,10 @@ if(isset($_GET["mode"])) {
 				}
 			}
 			// pops an error message in the $result
-			foreach ($errorElements as $error) {
-				$result[$error] = ["error" => "Invalid element!"];
+			if(isset($errorElements)) {
+				foreach ($errorElements as $error) {
+					$result[$error] = ["error" => "Invalid element!"];
+				}
 			}
 			// echos the array as JSON
 			echo json_encode($result);
@@ -106,8 +110,10 @@ if(isset($_GET["mode"])) {
 				}
 			}
 			// pops an error message in the $result
-			foreach ($errorElements as $error) {
-				$result[$error] = ["error" => "Invalid element!"];
+			if(isset($errorElements)) {
+				foreach ($errorElements as $error) {
+					$result[$error] = ["error" => "Invalid element!"];
+				}
 			}
 			// echos the array as JSON
 			echo json_encode($result);

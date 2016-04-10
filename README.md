@@ -26,4 +26,4 @@ The answer? **Every single element on the Periodic Table!** Pretty cool, right?
 ## Issues? Bugs? Compliments?
 If you find a bug or issue, please submit an issue here on [GitHub](https://github.com/MiningPotatoes/PeriodicTable-API).
 
-If you want to help join the fight, feel free to submit a pull request with your code!
+If you want to help me <del>cry</del> code, feel free to submit a pull request with your code!
