@@ -20,7 +20,10 @@ if(isset($_GET["mode"])) {
 			}
 			echo json_encode($result);
 			break;
+		case "orbitals":
+			break;
 		default:
+			echo json_encode(["error" => "No mode specified. Please try again!"]);
 			break;
 	}
 } else {
