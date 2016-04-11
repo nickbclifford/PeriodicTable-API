@@ -11,12 +11,12 @@ Certain options can be added to the GET parameters as well.
 The `elements` field contains comma-seperated element symbols. If the `elements` field is removed, **all** elements will be used.
 
 ### Modes
-|Valid Modes|Purpose|Options|Purpose|
-|-----------|-------|-------|-------|
-|`names`|Get the full name of an element given it's symbol.|N/A|N/A|
-|`orbitals`/`electrons`|Get the electronic configuration of an element given it's symbol.|`showBlocks`|Show the electron blocks of the element.|
-|`numbers`|Get the atomic number of an element given it's symbol.|`mass`|Show the atomic mass of the element.|
-|`dankmemes`|¯\\\_(ツ)_/¯|N/A|N/A|
+|Valid Modes|Purpose|Options|Purpose|Values|
+|-----------|-------|-------|-------|------|
+|`names`|Get the full name of an element given it's symbol.|`spelling`|Changes the spelling of the element names.|`uk`/`sci`|
+|`orbitals` or `electrons`|Get the electronic configuration of an element given it's symbol.|`showBlocks`|Show the electron blocks of the element.|`true`|
+|`numbers`|Get the atomic number of an element given it's symbol.|`mass`|Show the atomic mass of the element.|`true`|
+|`dankmemes`|¯\\\_(ツ)_/¯|N/A|N/A|N/A|
 
 ## Elements
 Now, I know you're saying, *But, Nick, which elements are supported by your wonderful fantastic API?*
