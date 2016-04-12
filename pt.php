@@ -37,6 +37,7 @@ if(isset($_GET["mode"])) {
 				}
 			}
 			// echos the array as JSON
+			header('Content-Type: application/json');
 			echo json_encode($result);
 			break;
 		case "orbitals":
@@ -80,6 +81,7 @@ if(isset($_GET["mode"])) {
 				}
 			}
 			// echos the array as JSON
+			header('Content-Type: application/json');
 			echo json_encode($result);
 			break;
 		case "numbers":
@@ -116,17 +118,21 @@ if(isset($_GET["mode"])) {
 				}
 			}
 			// echos the array as JSON
+			header('Content-Type: application/json');
 			echo json_encode($result);
 			break;
 		case "dankmemes":
+			header('Content-Type: application/json');
 			echo json_encode([69 => "( ͡° ͜ʖ ͡°)"]);
 			break;
 		default:
 			// invalid mode? echo an error.
+			header('Content-Type: application/json');
 			echo json_encode(["error" => "Invalid mode. Please try again!"]);
 			break;
 	}
 } else {
-	// no modes? echo an error.
+	// no modes? echo an error.]
+	header('Content-Type: application/json');
 	echo json_encode(["error" => "No mode specified. Please try again!"]);
 }
