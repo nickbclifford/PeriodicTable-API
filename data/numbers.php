@@ -126,3 +126,5 @@ foreach($numbers as $key => $value) {
 	$atomic = array_search($key, array_keys($numbers)) + 1;
 	$numbers[$key]["atomic"] = $atomic;
 }
+
+return $numbers;
