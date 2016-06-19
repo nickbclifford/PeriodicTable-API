@@ -113,12 +113,12 @@ $names = [
 	'Ds' => 'Darmstadtium',
 	'Rg' => 'Roentgenium',
 	'Cn' => 'Copernicium',
-	'Uut' => 'Ununtrium',
+	'Nh' => 'Nihonium',
 	'Fl' => 'Flevorium',
-	'Uup' => 'Ununpentium',
+	'Mc' => 'Moscovium',
 	'Lv' => 'Livermorium',
-	'Uus' => 'Ununseptium',
-	'Uuo' => 'Ununoctium'
+	'Ts' => 'Tennessine',
+	'Og' => 'Oganesson'
 ];
 // congrats if you've made it this far. welcome to hell.
 if(isset($_GET["spelling"])) {

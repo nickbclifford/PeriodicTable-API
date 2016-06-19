@@ -113,12 +113,12 @@ $numbers = [
 	'Ds' => ["mass" => 281],
 	'Rg' => ["mass" => 280],
 	'Cn' => ["mass" => 285],
-	'Uut' => ["mass" => 284],
+	'Nh' => ["mass" => 284],
 	'Fl' => ["mass" => 289],
-	'Uup' => ["mass" => 288],
+	'Mc' => ["mass" => 288],
 	'Lv' => ["mass" => 293],
-	'Uus' => ["mass" => 294],
-	'Uuo' => ["mass" => 294]
+	'Ts' => ["mass" => 294],
+	'Og' => ["mass" => 294]
 ];
 
 // programmatically assigns the atomic numbers to each element
