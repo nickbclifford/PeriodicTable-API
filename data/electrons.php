@@ -113,12 +113,12 @@ $electrons = [
 	'Ds' => ['block' => 'd'],
 	'Rg' => ['block' => 'd'],
 	'Cn' => ['block' => 'd'],
-	'Nh' => ['block' => 'p'],
+	'Uut' => ['block' => 'p'],
 	'Fl'  => ['block' => 'p'],
-	'Mc' => ['block' => 'p'],
+	'Uup' => ['block' => 'p'],
 	'Lv'  => ['block' => 'p'],
-	'Ts' => ['block' => 'p'],
-	'Og' => ['block' => 'p']
+	'Uus' => ['block' => 'p'],
+	'Uuo' => ['block' => 'p']
 ];
 
 function electron_config($element_number, $shortened = false) {
