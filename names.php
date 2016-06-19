@@ -132,5 +132,3 @@ if(isset($_GET["spelling"])) {
 		$names['Cs'] = 'Caesium';
  	}
 }
-
-return $names;

@@ -207,5 +207,3 @@ function electron_config($element_number, $shortened = false) {
 	
 	return $notation;
 }
-
-return $electrons;
