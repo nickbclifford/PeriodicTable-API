@@ -32,7 +32,7 @@ Example:
 	},
 	"numbers": {
 		"Nh": {
-			"atomic": 133
+			"atomic": 113
 		}
 	}
 }
