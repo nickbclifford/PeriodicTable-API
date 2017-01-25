@@ -24,6 +24,7 @@ The `elements` field contains comma-seperated element symbols. If the `elements`
 The JSON response has a top-level `error` field, and a top-level field for each mode you select.
 
 Example:
+
 ```json
 {
 	"error": null,
