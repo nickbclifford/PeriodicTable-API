@@ -1,10 +1,13 @@
+# Notice
+This project will no longer be maintained, and is now deprecated. This should not be used in production, since the data here is static. If you need this sort of information, store it locally.
 # Periodic Table API
 This is a RESTful API for the Periodic Table of Elements.
 ## Syntax
-(I'll be using my website, [nickclifford.me](https://nickclifford.me/), as an example address here, with `/api` tacked onto the end.)
+~~(I'll be using my website, [nickclifford.me](https://nickclifford.me/), as an example address here, with `/api` tacked onto the end.)~~
+*This is no longer being hosted by me. If, for some reason, you still want to use this, feel free to host it yourself.*
 
 The basic syntax is:
-`https://nickclifford.me/api/pt.php?mode={modes}&elements={element symbols}`
+`https://example.com/pt.php?mode={modes}&elements={element symbols}`
 
 Certain options can be added to the GET parameters as well.
 
@@ -38,11 +41,6 @@ Example:
 	}
 }
 ```
-
-## Elements
-Now, I know you're saying, *But, Nick, which elements are supported by your wonderful fantastic API?*
-
-The answer? **Every single element on the Periodic Table!** Pretty cool, right?
 
 ## Issues? Bugs? Compliments?
 If you find a bug or issue, please submit an issue here on [GitHub](https://github.com/MiningPotatoes/PeriodicTable-API).
